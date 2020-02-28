@@ -193,3 +193,247 @@
   INFO [0872416b] Running /usr/bin/env echo "Branch master (at 47c37452319b1a822b45eb9800f80e1451d9b4e5) deployed as release 20200227185341 by jaime" >> /var/www/example.com/html/revisions.log as autentia@192.168.105.10
  DEBUG [0872416b] Command: cd /var/www/example.com/html/releases && /usr/bin/env echo "Branch master (at 47c37452319b1a822b45eb9800f80e1451d9b4e5) deployed as release 20200227185341 by jaime" >> /var/www/example.com/html/revisions.log
   INFO [0872416b] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-27 15:55:20 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bb9c69be] Running /usr/bin/env mkdir -p /tmp as autentia@192.168.105.10
+ DEBUG [bb9c69be] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bb9c69be] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 0.0%
+  INFO Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 100.0%
+  INFO [f4682390] Running /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh as autentia@192.168.105.10
+ DEBUG [f4682390] Command: /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh
+  INFO [f4682390] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [a476e0b4] Running /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD as autentia@192.168.105.10
+ DEBUG [a476e0b4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD )
+ DEBUG [a476e0b4] 	87ddc0daa22addda2726c981a5a31c09a7278194	HEAD
+  INFO [a476e0b4] Finished in 2.196 seconds with exit status 0 (successful).
+  INFO [2b5eafd1] Running /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [2b5eafd1] Command: /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases
+  INFO [2b5eafd1] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [bac7a1e8] Running [ -f /var/www/example.com/html/current/REVISION ] as autentia@192.168.105.10
+ DEBUG [bac7a1e8] Command: [ -f /var/www/example.com/html/current/REVISION ]
+ DEBUG [bac7a1e8] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [89a9eb02] Running /usr/bin/env cat /var/www/example.com/html/current/REVISION 2>/dev/null as autentia@192.168.105.10
+ DEBUG [89a9eb02] Command: /usr/bin/env cat /var/www/example.com/html/current/REVISION 2>/dev/null
+ DEBUG [89a9eb02] 	47c37452319b1a822b45eb9800f80e1451d9b4e5
+ DEBUG [89a9eb02] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [885101bc] Running [ -f /var/www/example.com/html/repo/HEAD ] as autentia@192.168.105.10
+ DEBUG [885101bc] Command: [ -f /var/www/example.com/html/repo/HEAD ]
+ DEBUG [885101bc] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/example.com/html/repo
+ DEBUG [74c5d9b3] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [74c5d9b3] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [74c5d9b3] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [aeb4d859] Running /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git as autentia@192.168.105.10
+ DEBUG [aeb4d859] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git )
+  INFO [aeb4d859] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [0a8da6ea] Running /usr/bin/env git remote update --prune as autentia@192.168.105.10
+ DEBUG [0a8da6ea] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0a8da6ea] 	Fetching origin
+ DEBUG [0a8da6ea] 	From github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3
+   47c3745..87ddc0d  master     -> master
+  INFO [0a8da6ea] Finished in 2.351 seconds with exit status 0 (successful).
+ DEBUG [cb37d790] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [cb37d790] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [cb37d790] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [b62da819] Running /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200227185529 as autentia@192.168.105.10
+ DEBUG [b62da819] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200227185529 )
+  INFO [b62da819] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [59607401] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200227185529 as autentia@192.168.105.10
+ DEBUG [59607401] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200227185529 )
+  INFO [59607401] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [57e6f480] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [57e6f480] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [57e6f480] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [15ceb5e5] Running /usr/bin/env git rev-list --max-count=1 master as autentia@192.168.105.10
+ DEBUG [15ceb5e5] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [15ceb5e5] 	87ddc0daa22addda2726c981a5a31c09a7278194
+ DEBUG [15ceb5e5] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [9d3b2d8c] Running if test ! -d /var/www/example.com/html/releases/20200227185529; then echo "Directory does not exist '/var/www/example.com/html/releases/20200227185529'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [9d3b2d8c] Command: if test ! -d /var/www/example.com/html/releases/20200227185529; then echo "Directory does not exist '/var/www/example.com/html/releases/20200227185529'" 1>&2; false; fi
+ DEBUG [9d3b2d8c] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [c839eed7] Running /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION as autentia@192.168.105.10
+ DEBUG [c839eed7] Command: cd /var/www/example.com/html/releases/20200227185529 && /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION
+  INFO [c839eed7] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [17cda520] Running /usr/bin/env ln -s /var/www/example.com/html/releases/20200227185529 /var/www/example.com/html/releases/current as autentia@192.168.105.10
+ DEBUG [17cda520] Command: /usr/bin/env ln -s /var/www/example.com/html/releases/20200227185529 /var/www/example.com/html/releases/current
+  INFO [17cda520] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [96acbc72] Running /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html as autentia@192.168.105.10
+ DEBUG [96acbc72] Command: /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html
+  INFO [96acbc72] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [58b1e5b9] Running /usr/bin/env ls -x /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [58b1e5b9] Command: /usr/bin/env ls -x /var/www/example.com/html/releases
+ DEBUG [58b1e5b9] 	20200227180525	20200227185341	20200227185529
+ DEBUG [58b1e5b9] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 3 deployed releases on 192.168.105.10
+ DEBUG [11e6fc8e] Running [ -d /var/www/example.com/html/current ] as autentia@192.168.105.10
+ DEBUG [11e6fc8e] Command: [ -d /var/www/example.com/html/current ]
+ DEBUG [11e6fc8e] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [2b5c665a] Running /usr/bin/env readlink /var/www/example.com/html/current as autentia@192.168.105.10
+ DEBUG [2b5c665a] Command: /usr/bin/env readlink /var/www/example.com/html/current
+ DEBUG [2b5c665a] 	/var/www/example.com/html/releases/20200227185529
+ DEBUG [2b5c665a] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO No old releases (keeping newest 3) on 192.168.105.10
+ DEBUG [51f2a61c] Running if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [51f2a61c] Command: if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi
+ DEBUG [51f2a61c] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [91a46ace] Running /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200227185529 by jaime" >> /var/www/example.com/html/revisions.log as autentia@192.168.105.10
+ DEBUG [91a46ace] Command: cd /var/www/example.com/html/releases && /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200227185529 by jaime" >> /var/www/example.com/html/revisions.log
+  INFO [91a46ace] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-27 16:24:21 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d1780743] Running /usr/bin/env mkdir -p /tmp as autentia@192.168.105.10
+ DEBUG [d1780743] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d1780743] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 0.0%
+  INFO Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 100.0%
+  INFO [9b2441ef] Running /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh as autentia@192.168.105.10
+ DEBUG [9b2441ef] Command: /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh
+  INFO [9b2441ef] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [6f67c9ec] Running /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD as autentia@192.168.105.10
+ DEBUG [6f67c9ec] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD )
+ DEBUG [6f67c9ec] 	87ddc0daa22addda2726c981a5a31c09a7278194	HEAD
+  INFO [6f67c9ec] Finished in 2.276 seconds with exit status 0 (successful).
+  INFO [9a7b94df] Running /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [9a7b94df] Command: /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases
+  INFO [9a7b94df] Finished in 0.015 seconds with exit status 0 (successful).
+ DEBUG [8a27df38] Running [ -f /var/www/example.com/html/current/REVISION ] as autentia@192.168.105.10
+ DEBUG [8a27df38] Command: [ -f /var/www/example.com/html/current/REVISION ]
+ DEBUG [8a27df38] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [b91b389f] Running [ -f /var/www/example.com/html/repo/HEAD ] as autentia@192.168.105.10
+ DEBUG [b91b389f] Command: [ -f /var/www/example.com/html/repo/HEAD ]
+ DEBUG [b91b389f] Finished in 0.053 seconds with exit status 1 (failed).
+ DEBUG [e17bf604] Running if test ! -d /var/www/example.com/html; then echo "Directory does not exist '/var/www/example.com/html'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [e17bf604] Command: if test ! -d /var/www/example.com/html; then echo "Directory does not exist '/var/www/example.com/html'" 1>&2; false; fi
+ DEBUG [e17bf604] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [152121f7] Running /usr/bin/env git clone --mirror git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git /var/www/example.com/html/repo as autentia@192.168.105.10
+ DEBUG [152121f7] Command: cd /var/www/example.com/html && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git clone --mirror git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git /var/www/example.com/html/repo )
+ DEBUG [152121f7] 	Cloning into bare repository '/var/www/example.com/html/repo'...
+  INFO [152121f7] Finished in 2.392 seconds with exit status 0 (successful).
+ DEBUG [70c4f72a] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [70c4f72a] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [70c4f72a] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [5c4a0af7] Running /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git as autentia@192.168.105.10
+ DEBUG [5c4a0af7] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git )
+  INFO [5c4a0af7] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [d11b4807] Running /usr/bin/env git remote update --prune as autentia@192.168.105.10
+ DEBUG [d11b4807] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d11b4807] 	Fetching origin
+  INFO [d11b4807] Finished in 2.254 seconds with exit status 0 (successful).
+ DEBUG [763123b1] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [763123b1] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [763123b1] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [43952daa] Running /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200227192430 as autentia@192.168.105.10
+ DEBUG [43952daa] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200227192430 )
+  INFO [43952daa] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [502eb4ff] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200227192430 as autentia@192.168.105.10
+ DEBUG [502eb4ff] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200227192430 )
+  INFO [502eb4ff] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [9c84fb0f] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [9c84fb0f] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [9c84fb0f] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [6e06058e] Running /usr/bin/env git rev-list --max-count=1 master as autentia@192.168.105.10
+ DEBUG [6e06058e] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6e06058e] 	87ddc0daa22addda2726c981a5a31c09a7278194
+ DEBUG [6e06058e] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [a860412b] Running if test ! -d /var/www/example.com/html/releases/20200227192430; then echo "Directory does not exist '/var/www/example.com/html/releases/20200227192430'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [a860412b] Command: if test ! -d /var/www/example.com/html/releases/20200227192430; then echo "Directory does not exist '/var/www/example.com/html/releases/20200227192430'" 1>&2; false; fi
+ DEBUG [a860412b] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [31ce95e6] Running /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION as autentia@192.168.105.10
+ DEBUG [31ce95e6] Command: cd /var/www/example.com/html/releases/20200227192430 && /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION
+  INFO [31ce95e6] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [d898313e] Running /usr/bin/env ln -s /var/www/example.com/html/releases/20200227192430 /var/www/example.com/html/releases/current as autentia@192.168.105.10
+ DEBUG [d898313e] Command: /usr/bin/env ln -s /var/www/example.com/html/releases/20200227192430 /var/www/example.com/html/releases/current
+  INFO [d898313e] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [ad0b2caa] Running /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html as autentia@192.168.105.10
+ DEBUG [ad0b2caa] Command: /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html
+  INFO [ad0b2caa] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [526f4301] Running /usr/bin/env ls -x /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [526f4301] Command: /usr/bin/env ls -x /var/www/example.com/html/releases
+ DEBUG [526f4301] 	20200227192430
+ DEBUG [526f4301] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [624e4246] Running if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [624e4246] Command: if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi
+ DEBUG [624e4246] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [5bb615b3] Running /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200227192430 by jaime" >> /var/www/example.com/html/revisions.log as autentia@192.168.105.10
+ DEBUG [5bb615b3] Command: cd /var/www/example.com/html/releases && /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200227192430 by jaime" >> /var/www/example.com/html/revisions.log
+  INFO [5bb615b3] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-28 10:49:36 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [513ea55e] Running /usr/bin/env mkdir -p /tmp as autentia@192.168.105.10
+ DEBUG [513ea55e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [513ea55e] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 0.0%
+  INFO Uploading /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh 100.0%
+  INFO [b576bcea] Running /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh as autentia@192.168.105.10
+ DEBUG [b576bcea] Command: /usr/bin/env chmod 700 /tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh
+  INFO [b576bcea] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [709702f9] Running /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD as autentia@192.168.105.10
+ DEBUG [709702f9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git ls-remote git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git HEAD )
+ DEBUG [709702f9] 	87ddc0daa22addda2726c981a5a31c09a7278194	HEAD
+  INFO [709702f9] Finished in 2.257 seconds with exit status 0 (successful).
+  INFO [7058852a] Running /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [7058852a] Command: /usr/bin/env mkdir -p /var/www/example.com/html/shared /var/www/example.com/html/releases
+  INFO [7058852a] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [9d1a58db] Running [ -f /var/www/example.com/html/current/REVISION ] as autentia@192.168.105.10
+ DEBUG [9d1a58db] Command: [ -f /var/www/example.com/html/current/REVISION ]
+ DEBUG [9d1a58db] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [b876ae5a] Running /usr/bin/env cat /var/www/example.com/html/current/REVISION 2>/dev/null as autentia@192.168.105.10
+ DEBUG [b876ae5a] Command: /usr/bin/env cat /var/www/example.com/html/current/REVISION 2>/dev/null
+ DEBUG [b876ae5a] 	87ddc0daa22addda2726c981a5a31c09a7278194
+ DEBUG [b876ae5a] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [f1089d00] Running [ -f /var/www/example.com/html/repo/HEAD ] as autentia@192.168.105.10
+ DEBUG [f1089d00] Command: [ -f /var/www/example.com/html/repo/HEAD ]
+ DEBUG [f1089d00] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/example.com/html/repo
+ DEBUG [c42688e6] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [c42688e6] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [c42688e6] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [9a7d502b] Running /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git as autentia@192.168.105.10
+ DEBUG [9a7d502b] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote set-url origin git@github.com:jinostrozam/painless-deployment-workflows-with-Capistrano-3.git )
+  INFO [9a7d502b] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [c5647172] Running /usr/bin/env git remote update --prune as autentia@192.168.105.10
+ DEBUG [c5647172] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c5647172] 	Fetching origin
+  INFO [c5647172] Finished in 2.294 seconds with exit status 0 (successful).
+ DEBUG [9d2ebb0a] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [9d2ebb0a] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [9d2ebb0a] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [42a5df1d] Running /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200228134944 as autentia@192.168.105.10
+ DEBUG [42a5df1d] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env mkdir -p /var/www/example.com/html/releases/20200228134944 )
+  INFO [42a5df1d] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [bf19916a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200228134944 as autentia@192.168.105.10
+ DEBUG [bf19916a] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/example.com/html/releases/20200228134944 )
+  INFO [bf19916a] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [c9a146fd] Running if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [c9a146fd] Command: if test ! -d /var/www/example.com/html/repo; then echo "Directory does not exist '/var/www/example.com/html/repo'" 1>&2; false; fi
+ DEBUG [c9a146fd] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [14227fba] Running /usr/bin/env git rev-list --max-count=1 master as autentia@192.168.105.10
+ DEBUG [14227fba] Command: cd /var/www/example.com/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-painless-deployment-workflows-with-capistrano-3-production-jaime.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [14227fba] 	87ddc0daa22addda2726c981a5a31c09a7278194
+ DEBUG [14227fba] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [bbbc5115] Running if test ! -d /var/www/example.com/html/releases/20200228134944; then echo "Directory does not exist '/var/www/example.com/html/releases/20200228134944'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [bbbc5115] Command: if test ! -d /var/www/example.com/html/releases/20200228134944; then echo "Directory does not exist '/var/www/example.com/html/releases/20200228134944'" 1>&2; false; fi
+ DEBUG [bbbc5115] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [17bd43f3] Running /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION as autentia@192.168.105.10
+ DEBUG [17bd43f3] Command: cd /var/www/example.com/html/releases/20200228134944 && /usr/bin/env echo "87ddc0daa22addda2726c981a5a31c09a7278194" > REVISION
+  INFO [17bd43f3] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [12b916ba] Running /usr/bin/env ln -s /var/www/example.com/html/releases/20200228134944 /var/www/example.com/html/releases/current as autentia@192.168.105.10
+ DEBUG [12b916ba] Command: /usr/bin/env ln -s /var/www/example.com/html/releases/20200228134944 /var/www/example.com/html/releases/current
+  INFO [12b916ba] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [5efe2fb0] Running /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html as autentia@192.168.105.10
+ DEBUG [5efe2fb0] Command: /usr/bin/env mv /var/www/example.com/html/releases/current /var/www/example.com/html
+  INFO [5efe2fb0] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [619982fd] Running /usr/bin/env ls -x /var/www/example.com/html/releases as autentia@192.168.105.10
+ DEBUG [619982fd] Command: /usr/bin/env ls -x /var/www/example.com/html/releases
+ DEBUG [619982fd] 	20200227192430	20200228134944
+ DEBUG [619982fd] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [e57def18] Running if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi as autentia@192.168.105.10
+ DEBUG [e57def18] Command: if test ! -d /var/www/example.com/html/releases; then echo "Directory does not exist '/var/www/example.com/html/releases'" 1>&2; false; fi
+ DEBUG [e57def18] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [7d4f8dfe] Running /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200228134944 by jaime" >> /var/www/example.com/html/revisions.log as autentia@192.168.105.10
+ DEBUG [7d4f8dfe] Command: cd /var/www/example.com/html/releases && /usr/bin/env echo "Branch master (at 87ddc0daa22addda2726c981a5a31c09a7278194) deployed as release 20200228134944 by jaime" >> /var/www/example.com/html/revisions.log
+  INFO [7d4f8dfe] Finished in 0.044 seconds with exit status 0 (successful).
